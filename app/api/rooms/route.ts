@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
-import rooms from '@/data/rooms.json'
+import roomData from '@/data/roomData.json'
+import type RoomData from "@/modules/rooms/types/room.types";
+
+// Asserting Type
+
+const rooms = roomData as RoomData
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);

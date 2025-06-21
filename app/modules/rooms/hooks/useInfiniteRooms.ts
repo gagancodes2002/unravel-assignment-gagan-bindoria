@@ -1,4 +1,4 @@
-import { useInfiniteQuery } from "@tanstack/react-query"
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query"
 import { Room } from "../types"
 import { roomService } from "../services/roomService"
 
@@ -14,5 +14,14 @@ export const useInfiniteRooms = () => {
             return allPages.length
         }
 
+    })
+}
+
+export const useGetRoomById = (id: string) => {
+    return useQuery<Room, Error>({
+        queryKey: ['room', id],
+        queryFn: () => roomService.fetchRoomById(id),
+        enabled: !!id,
+        staleTime: 5 * 60 * 1000, // 5 minutes
     })
 }

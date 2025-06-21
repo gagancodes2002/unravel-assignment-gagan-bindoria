@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 import QueryProvider from "./components/QueryProvider";
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
@@ -31,11 +33,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <QueryProvider >
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
-        </QueryProvider>
+
+        <main
+          className="grid grid-rows-[20px_1fr_20px] items-start justify-items-center min-h-screen pb-20 pt-10 gap-16 xs:p-4 sm:p-6 font-[family-name:var(--font-geist-sans)]">
+
+
+
+          <h1 className="text-2xl font-bold mb-4">Available Rooms</h1>
+          <QueryProvider >
+            <ThemeProvider>
+              {children}
+            </ThemeProvider>
+          </QueryProvider>
+        </main>
+
       </body>
     </html>
   );

@@ -21,6 +21,10 @@ export const lightPalette = {
         secondary: '#718096',
         disabled: '#A0AEC0',
     },
+    border: {
+        light: "#DFE0E4",
+        dark: "#1e293b",
+    }
     // ... rest of palette
 };
 
@@ -32,5 +36,19 @@ export const darkPalette = {
         dark: '#2C5F5D',
         contrastText: '#FFFFFF',
     },
-    // ... rest of dark palette
+    background: {
+        default: '#0F1419',
+        paper: '#1A1F2E',
+        secondary: '#242B3D',
+    },
+    text: {
+        primary: '#E2E8F0',
+        secondary: '#A0AEC0',
+        disabled: '#4A5568',
+    },
+    border: {
+        light: '#334155', // Dark mode light border
+        dark: '#1e293b',  // Dark mode dark border
+    },
+    // ... rest of your dark palette
 };
